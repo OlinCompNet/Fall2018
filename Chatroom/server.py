@@ -18,7 +18,18 @@ def receive_messages():
             clients.add(addr)
             print("connected to:", addr)
 
-        print("received message:", data.decode('UTF8'), "from", addr)
+        # if client sends 'quit', then disconnect
+        if data.decode('UTF8') == 'quit':
+            clients.remove(addr)
+            print(addr, "deconnected")
+        # otherwise, re-broadcast message
+        else:
+            print("received message:", data.decode('UTF8'), "from", addr)
+            # Send out message to other clients
+            for client in clients:
+                # Exclude the original client address
+                if client != addr:
+                    sock.sendto(data, client)
 
 
 t = Thread(target=receive_messages)
