@@ -9,12 +9,17 @@ sock.bind((UDP_IP, UDP_PORT))
 
 clients = set()
 
-def recieve_messages():
+def receive_messages():
     # Receives messages on a port
     while True:
         data, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
+        # if the client is not currently connected, add it to clients
+        if addr not in clients:
+            clients.add(addr)
+            print("connected to:", addr)
+
         print("received message:", data.decode('UTF8'), "from", addr)
 
 
-t = Thread(target=recieve_messages)
+t = Thread(target=receive_messages)
 t.start()
