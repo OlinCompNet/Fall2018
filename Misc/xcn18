@@ -1,0 +1,37 @@
+ Volume in drive C has no label.
+ Volume Serial Number is 38B4-FFBA
+
+ Directory of C:\Users\amorrow\AppData\Local\Programs\Python\Python35\CN18
+
+10/25/2017  03:22 PM    <DIR>          .
+10/25/2017  03:22 PM    <DIR>          ..
+04/26/2017  07:27 AM             1,441 beginning of questions for construct IPv4 header.py
+05/04/2017  01:02 PM             1,609 bytes2address.py
+06/04/2017  02:15 AM             5,069 Calc_16_bit_checksum.py
+04/24/2017  03:20 PM             1,810 construct_IPv4_header.py
+04/25/2017  06:35 AM             3,014 construct_IPv4_header_with_comments.py
+04/26/2017  07:30 AM             2,574 construct_IPv4_header_with_Descriptors - and byte locations.py
+04/25/2017  01:49 PM             3,302 construct_IPv4_header_with_Descriptors.py
+06/19/2017  11:23 PM             4,834 construct_ISM_header.py
+04/20/2017  08:46 AM             1,141 construct_UDP_header.py
+04/27/2017  09:06 AM             1,672 DescriptorBase.py
+04/29/2017  08:42 AM             1,473 DescriptorBaseB.py
+07/27/2017  05:27 AM             3,042 DescriptorBaseBq.py
+05/06/2017  08:04 AM               148 Int.py
+04/24/2017  12:08 PM             4,717 InternetWireFormat.py
+06/19/2017  11:20 PM             4,740 InternetWireFormatISM.py
+04/28/2017  12:14 AM             1,738 ipc.py
+04/28/2017  12:26 AM             1,739 ipc_x.py
+05/04/2017  10:49 AM             4,601 make_IPv4_UDP.py
+05/04/2017  01:48 PM             4,933 make_IPv4_UDP_x.py
+05/04/2017  09:01 AM             6,205 make_IPv4_UDP_xx.py
+05/05/2017  01:27 AM             5,398 make_IPv4_UDP_x_final_class.py
+04/29/2017  08:34 AM             1,928 Nat.py
+04/24/2017  02:00 PM    <DIR>          ole
+04/24/2017  12:10 PM             2,754 RFC791_Internet_Datagram_Header.py
+07/19/2017  09:51 PM                23 testing.py
+04/28/2017  12:30 AM               215 value_check.py
+10/25/2017  03:22 PM                 0 xcn18
+06/19/2017  11:20 PM    <DIR>          __pycache__
+              26 File(s)         70,120 bytes
+               4 Dir(s)  11,372,158,976 bytes free
