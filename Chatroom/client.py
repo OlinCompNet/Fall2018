@@ -12,7 +12,7 @@ def send():
         client_socket.send(bytes(msg,"utf8"))
 
 
-ADDR = ('127.0.0.1', 5000)
+ADDR = ('192.168.1.225', 5000)
 
 client_socket = socket(AF_INET, SOCK_DGRAM)
 client_socket.connect(ADDR)
