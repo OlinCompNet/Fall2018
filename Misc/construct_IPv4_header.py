@@ -26,7 +26,7 @@ def construct_IPv4_header():
 if __name__ == "__main__":
     IPv4 = construct_IPv4_header()
     print(IPv4)
-    IPv4_eg = 0x4500005441e040004001e4c00a0000040a000005
+    IPv4_eg = 0x4500002053044000401162b7c0a801e1c0a801e0d53b1388000caa2674657374
     def getfield(intrep=IPv4_eg,length=4,offset=4,headerlen=160):
         return ((intrep<<offset)%pow(2,headerlen))>>(headerlen-length)
                                                     
