@@ -1,6 +1,6 @@
 
-import InternetWireFormat
-from InternetWireFormat import Internet_Wire_Format as IWF
+import InternetWireFormat3
+from InternetWireFormat3 import Internet_Wire_Format as IWF
 from Nat import Nat
 def construct_IPv4_header():
     with IWF() as IPv4:
@@ -25,6 +25,22 @@ def construct_IPv4_header():
         
     return IPv4
 
+def construct_UDP_header():
+    with IWF() as UDP:
+        UDP.boundary(32) # Set boundary.
+                             # IETF headers are usually assumed to begin on
+                             # a bit address that is a multiple of 2**32
+            
+        UDP.field("Source Port",0,Nat,16) # (0-15)
+        UDP.field("Destination Port",1,Nat,16) # (16-31)
+        UDP.field("Length",2,Nat,16) # (32-47) and
+        UDP.field("Checksum",3,Nat,16) # (48-63)
+            #UDP.field("data_octets",4,Nat,64)
+
+        UDP.boundary(32)  # this could be the basis for an attack exercise 
+
+    return UDP
+
 
 if __name__ == "__main__":
     print("construct IPv4 header")
@@ -32,6 +48,8 @@ if __name__ == "__main__":
     print(IPv4)
     IPv4_eg = 0x4500002053044000401162b7c0a801e1c0a801e0d53b1388000caa2674657374
     
+    
+    IPv4_eg =  0x4500002053044000401162b7c0a801e1c0a801e0
     def getfield(intrep=IPv4_eg,length=4,offset=4,headerlen=160):
         
         
