@@ -68,9 +68,7 @@ class Internet_Wire_Format:
     
 class Field:
     def __init__(self, data_value,data_type,bit_length,bit_offset):
-        
-        
-        
+            
         self.data_value = data_value
         self.bit_length = bit_length
         self.data_type = data_type
@@ -85,7 +83,6 @@ class Field:
             ]
 
     def __str__(self):
-        print("in __str")
         return "\n"+"\n".join(
             ["\t{:<10}: {:}".format(
                 field_element_name,
@@ -128,6 +125,7 @@ class Field:
     
 if __name__ == "__main__":
     print("Running Unit Test\n")
+    
     def construct_UDP_header():
     
         with Internet_Wire_Format() as UDP:

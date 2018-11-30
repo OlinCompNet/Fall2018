@@ -1,9 +1,10 @@
 
-print("construct_IPv4_header2.py")
-import InternetWireFormat3
-from InternetWireFormat3 import Internet_Wire_Format as IWF
+
+#import InternetWireFormat4
+from InternetWireFormat4 import Internet_Wire_Format as IWF
 from Nat import Nat
 def construct_IPv4_header():
+    print("construct IWF for IPv4 using InternetWireFormat4")
     with IWF() as IPv4:
         IPv4.boundary(32) # Set starting point memory alignment boundary"
         
@@ -19,14 +20,17 @@ def construct_IPv4_header():
         IPv4.field("Header Checksum",0,Nat,16)
         IPv4.field("Source Address",0,Nat,32)  
         IPv4.field("Destination Address",1,Nat,32)  
-        IPv4.field("Options",0,Nat,24)
-        IPv4.field("Padding",0,Nat,8)
+##        IPv4.field("Options",0,Nat,24)
+##        IPv4.field("Padding",0,Nat,8)
         
         IPv4.boundary(32)
+
+        header_length = 160
         
-    return IPv4
+    return IPv4, header_length
 
 def construct_UDP_header():
+    print("construct IWF for UDP using InternetWireFormat4")
     with IWF() as UDP:
         UDP.boundary(32) # Set boundary.
                              # IETF headers are usually assumed to begin on
@@ -38,15 +42,20 @@ def construct_UDP_header():
         UDP.field("Checksum",3,Nat,16) # (48-63)
             #UDP.field("data_octets",4,Nat,64)
 
-        UDP.boundary(32)  # this could be the basis for an attack exercise 
+        UDP.boundary(32)  # this could be the basis for an attack exercise
 
-    return UDP
+        header_length = 64
+
+    return UDP,header_length
 
 
 if __name__ == "__main__":
     print("construct IPv4 header")
-    IPv4 = construct_IPv4_header()
+    IPv4,IPv4_header_length = construct_IPv4_header()
     print(IPv4)
+    print("construct UDP header")
+    UDP, UDP_header_length = construct_UDP_header()
+    
     IPv4_eg = 0x4500002053044000401162b7c0a801e1c0a801e0d53b1388000caa2674657374
     
     
@@ -55,7 +64,8 @@ if __name__ == "__main__":
         
         
         return ((intrep<<offset)%pow(2,headerlen))>>(headerlen-length)
-                                                    
+    # fix for multiple headers - add pseudo header for UDP
+    # also add app level input
     for f in IPv4.field_name_list:
 
         bit_offset = getattr(IPv4,f).bit_offset
@@ -67,7 +77,7 @@ if __name__ == "__main__":
         WF_field_value = getfield(offset=bit_offset,length=bit_length)
         print(WF_field_format.format(f,getfield(offset=bit_offset,length=bit_length)))
         
-
+# have to add pseudo header for UDP
 
 
         

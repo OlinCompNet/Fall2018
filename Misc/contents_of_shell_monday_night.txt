@@ -1,0 +1,79 @@
+Python 3.5.3 (default, Sep 27 2018, 17:25:39) 
+[GCC 6.3.0 20170516] on linux
+Type "copyright", "credits" or "license()" for more information.
+>>> ipsniff = 0x4500004c2a25400040118c49c0a80101c0a801e100359f5000384b7e438f8185000100000000000001320664656269616e04706f6f6c036e7470036f7267046f
+>>> 0x45
+69
+>>> bool(0x4500004c2a25400040118c49c0a80101c0a801e100359f5000384b7e438f8185000100000000000001320664656269616e04706f6f6c036e7470036f7267046f)
+True
+>>> len(ipsniff0
+    )
+Traceback (most recent call last):
+  File "<pyshell#4>", line 1, in <module>
+    len(ipsniff0
+NameError: name 'ipsniff0' is not defined
+>>> len(ipsniff)
+Traceback (most recent call last):
+  File "<pyshell#5>", line 1, in <module>
+    len(ipsniff)
+TypeError: object of type 'int' has no len()
+>>> type(0b1)
+<class 'int'>
+>>> "{:8b}".format(3)
+'      11'
+>>> 
+>>> {:08b}.format(0x45)
+SyntaxError: invalid syntax
+>>> "{:08b}".format(0x45)
+'01000101'
+>>> "{:04b}".format(0x45)
+'1000101'
+>>> ipsniff.bit_length()
+511
+>>> 32*5
+160
+>>> "{:032b}".format(0x4500004c)
+'01000101000000000000000001001100'
+>>> "{:032b}".format(0x2a254000)
+'00101010001001010100000000000000'
+>>> "{:032b}".format(0x40118c49)
+'01000000000100011000110001001001'
+>>> "{:032b}".format(0xc0a80101)
+'11000000101010000000000100000001'
+>>> "{:032b}".format(0xc0a801e1)
+'11000000101010000000000111100001'
+>>> "{:032b}".format(0x7267046f)
+'01110010011001110000010001101111'
+>>> "{:032b}".format(0x7470036f)
+'01110100011100000000001101101111'
+>>> chr(0x74)
+'t'
+>>> chr(0x70)
+'p'
+>>> x32 =  "0x4500004c2a25400040118c49c0a80101c0a801e100359f5000384b7e438f8185000100000000000001320664656269616e04706f6f6c036e7470036f7267046f
+SyntaxError: EOL while scanning string literal
+>>> [0x4500004c,2a25400040118c49c0a80101c0a801e100359f5000384b7e438f8185000100000000000001320664656269616e04706f6f6c036e7470036f7267046f
+ 
+SyntaxError: invalid syntax
+>>> aa = [
+	##FFFFFFFF
+	0x4500004c, #1
+	0x2a254000, #2
+	0x40118c49, #3
+	0xc0a80101, #4
+	0xc0a801e1, #5
+	0x00359f50, #1
+	0x00384b7e, #2
+	0x438f8185,
+	0x00010000,
+	0x00000000,
+	0x01320664,
+	0x56269616,
+	0xe04706f6,
+	0xf6c036e7,
+	0x470036f7,
+	0x267046f
+      
+
+]
+>>> 
